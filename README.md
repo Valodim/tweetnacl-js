@@ -427,7 +427,6 @@ To run benchmarks in Node.js:
 To run benchmarks in a browser, open `test/benchmark/bench.html` (or
 `test/benchmark/bench-fast.html`).
 
-
 Benchmarks
 ----------
 
@@ -457,6 +456,12 @@ messages per second on a laptop or 60 and 30 messages per second on a smartphone
 per CPU core (with Web Workers you can do these operations in parallel),
 which is good enough for most applications.
 
+### Performance in Jest
+
+When using tweetnacl-js in tests with [Jest](jestjs.io), the
+[extraGlobals](https://jestjs.io/docs/configuration#extraglobals-arraystring)
+configuration variable should include `Math`.
+This avoids a significant performance penalty from the test vm environment.
 
 Contributors
 ------------
